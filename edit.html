@@ -1,0 +1,112 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{studentmodel.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+         <h3>Update Details</h3>
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Id:</label>
+    <div class="col-sm-4">
+        <input type="text" name="id" id="id_id" required maxlength="20" value="{{ studentmodel.id }}"/>
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" id="id_name" required maxlength="100" value="{{ studentmodel.name }}" />
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Age:</label>
+    <div class="col-sm-4">
+        <input type="text" name="age" id="id_age" required maxlength="100" value="{{ studentmodel.age }}" />
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Email:</label>
+    <div class="col-sm-4">
+        <input type="text" name="email" id="id_email" required maxlength="100" value="{{ studentmodel.email }}" />
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Phone:</label>
+    <div class="col-sm-4">
+        <input type="text" name="phone" id="id_phone" required maxlength="100" value="{{ studentmodel.phone }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+
+</body>
+</html>-->
+<html>
+
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit</h1>
+    <p style="margin-left:550px;"><a href="show">update</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="/update/{{object.id}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> id</td>
+                        <td><input type="text" name="id" value={{object.id}}></td>
+                    </tr>
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="name" value={{object.name}}></td>
+                    </tr>
+                    <tr>
+                        <td> Age</td>
+                        <td><input type="text" name="age" value={{object.age}}></td>
+                    </tr>
+                    <tr>
+                        <td> email</td>
+                         <td><input type="text" name="email" value={{object.email}}></td>
+                    </tr>
+                    <tr>
+                        <td> phone</td>
+                         <td><input type="text" name="phone" value={{object.phone}}></td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'show'  %}"><button>update</button></a></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

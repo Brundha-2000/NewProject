@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        table {
+            margin-left: 550px;
+            margin-top: 150px;
+            column-width: 20px;
+            font-size: 20px;
+            border: 5px solid black;
+            padding: 5px;
+        }
+
+        thead {
+            padding: 10px;
+        }
+
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body bgcolor="#cffcf2">
+    <h2 style="margin-left:100px;text-align: center;"><a href="/">Home</a></h2>
+    <div class="container">
+        <table border="5px solid #000;"  style="margin-left: auto;margin-right: auto; ">
+            <tbody>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>email</th>
+                        <th>phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+
+                    </tr>
+
+                </thead>
+            <tbody>
+                {% for i in details %}
+                <tr>
+                    <td style="padding:10px;">{{i.id}}</td>
+                    <td style="padding:10px;">{{i.name}}</td>
+                    <td style="padding:10px;">{{i.age}}</td>
+                    <td style="padding:10px;">{{i.email}}</td>
+                    <td style="padding:10px;">{{i.phone}}</td>
+                    <td style="padding:10px;"><a href="{% url 'edit' i.pk %}">Edit</a></td>
+                    <td style="padding:10px;"><a href="{% url 'delete' i.pk %}">Delete</a></td>
+
+                    <!--<td style="padding:10px;"><a href="edit/<int:id>">Edit</a></td>-->
+                  <!--  <td style="padding:10px;"><a href=r'^delete_product/(?P<pk>[0-9]+)/$'>Delete</a></td>-->
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+
+        </table>
+    </div>
+<table border="5px solid #000;"  style="margin-left: auto;margin-right: auto; ">
+   <center><h1> model 2</h1></center>
+     <thead>
+                    <tr>
+                        <th>deptName</th>
+                        <th>FacultyName</th>
+                    </tr>
+     </thead>
+
+    <tbody>
+                {% for j in deptmodel %}
+                <tr>
+                    <td style="padding:10px;">{{j.deptname}}</td>
+                    <td style="padding:10px;">{{j.FacultyName}}</td>
+         </tr>
+                {% endfor %}
+     </tbody>
+</table>
+
+
+</body>
+
+</html>

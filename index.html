@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>C.R.U.D</title>
+     {% load static %}
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 350px;
+            height: 150px;
+            padding: 15px;
+            background-color: aquamarine;
+
+        }
+
+
+    </style>
+</head>
+
+<body bgcolor="#7db9db">
+   <center> <p style="margin-left:50px;"><a href="show">Check data</a></p></center>
+   <center> <p style="margin-left:50px;">MODEL 1</p></center>
+   <img src="image.jpg">
+
+
+    <div class="container">
+        <table class="center" align="center" >
+            <tbody>
+            <form action="create" method="POST">
+                    {% csrf_token %}
+
+                   <!--<tr>
+                        <td> id</td>
+                        <td><textarea name='id' required></textarea></td>
+                    </tr>-->
+
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <td> Age</td>
+                        <td><input type="text" name="age" required></td>
+                    </tr>
+                    <tr>
+                        <td> email</td>
+                        <td><input type="email" id="email" name="email"></td>
+                        <!--<td><textarea name='email' required></textarea></td>-->
+                    </tr>
+                     <tr>
+                        <td> phone</td>
+                        <td><input  type="phone" id="phone" name="phone" required></td>
+                    </tr>
+
+                        <td style="margin-left:500px;"><a href="{% url 'show'  %}"> <button>Submit</button></a></td>
+                         <td><a href="{% url 'login'  %}"> <button type="button" class="btn btn-primary">logout</button></a></td>
+
+                    </tr>
+                </form>
+            </tbody>
+      </table>
+    </div>
+ <center> <p style="margin-left:50px;">MODEL 2</p></center>
+  <!-- <table class="center" align="center">-->s
+        <tr>
+                        <td> deptName </td>
+                        <td><input type="text" name="name" required></td>
+        </tr>
+         <tr>
+                        <td> Facultyname </td>
+                        <td><input type="text" name="Facultyname" required></td>
+         </tr>
+
+       <td style="margin-left:500px;"><a href="{% url 'show'  %}"> <button>Submit</button></a></td>
+
+
+  <td><a href="{% url 'login'  %}"> <button type="button" class="btn btn-primary">logout</button></a></td>
+
+   </table>
+
+</body>
+
+</html>
